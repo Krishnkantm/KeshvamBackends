@@ -1,0 +1,58 @@
+### Node & package artifacts
+node_modules/
+**/node_modules/
+
+# Client build output (create-react-app / Vite)
+client/build/
+client/dist/
+
+# Server build / dist
+server/dist/
+
+### Environment & secret files
+.env
+.env.*
+client/.env
+server/.env
+
+### Uploaded files and user-generated media (do NOT commit uploads)
+server/uploads/
+uploads/
+client/public/uploads/
+
+### Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+### OS files
+.DS_Store
+Thumbs.db
+
+### IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+### Test / coverage
+coverage/
+.nyc_output/
+
+### Temporary files
+*.tmp
+*.temp
+*.pid
+*.seed
+
+### Misc build caches
+.cache/
+.next/
+dist/
+build/
+
+# Keep lockfiles in repo for reproducibility; do not ignore package-lock.json or yarn.lock by default
