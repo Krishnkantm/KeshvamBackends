@@ -1,5 +1,12 @@
-
 {
+  "name": "keshvam-backend",
+  "version": "1.0.0",
+  "description": "MERN backend with MongoDB and Cloudinary",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
   "dependencies": {
     "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
@@ -8,5 +15,13 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
     "multer": "^2.0.2"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "author": "Your Name",
+  "license": "ISC"
 }

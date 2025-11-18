@@ -7,12 +7,13 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 const app = express();
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 app.use(cors({
   origin: '*', // Allow all origins (for development)
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 // -------------------- MONGODB CONNECTION --------------------
@@ -158,5 +159,5 @@ app.get('/api/health', (req,res) => res.json({ok:true}));
 
 // -------------------- SERVER --------------------
 const PORT = process.env.PORT || 5000;
-app.listen(5000, '0.0.0.0', () => console.log("Server running on port 5000"));
+app.listen(PORT, '0.0.0.0', () => console.log("Server running on port 5000"));
 
