@@ -161,6 +161,10 @@ app.get('/api/media', async (req, res) => {
   }
 });
 
+app.get("/ping", (req, res) => {
+  res.status(200).send("OK");
+});
+
 // -------------------- SERVER --------------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
