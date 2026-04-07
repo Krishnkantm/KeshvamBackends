@@ -16,9 +16,20 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // -------------------- CORS --------------------
 // Only allow frontend origin
-const FRONTEND_URL = 'https://keshwam-graphicsfrontend.vercel.app';
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://keshwamgraphics.vercel.app",
+  "https://keshwam-graphicsfrontend.vercel.app"
+];
+
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
